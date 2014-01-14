@@ -178,6 +178,8 @@ input[type=checkbox], input[type=radio] {
     border: 1px solid #566374;
     box-shadow: none;
     width: 2.2em !important;
+    background-color: #FFFFFF !important;
+    background-image: -moz-linear-gradient(right top , #FFFFFF 46%, #E9EAEA 73%) !important;
 }
 
 .gpii-prefsEditor .ui-slider-range {
