@@ -521,3 +521,6 @@ body {
     text-transform: capitalize !important;
 }
 
+.gpii-followingElement-container {
+    margin-left: 20px;
+}
