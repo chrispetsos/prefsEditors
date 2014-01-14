@@ -266,10 +266,8 @@ input[type=checkbox] + label.gpii-checkbox-label {
     font-family: 'allIcons';
     position: absolute;
     z-index: 4;
-    margin-top: 3px;
-    margin-left: 7px;
+    margin-top: -5px;
     font-size: 80px;
-    color: white;
 }
 
 .visualAlternatives-header-icon:before {
@@ -294,35 +292,35 @@ label.gpii-preset-button-label {
     width: 236px;
     height: 61px;
     text-align: left;
-    font-size: 1.3em;
+    font-size: 1.5em !important;
 }
 
-input[type=checkbox] + label.gpii-checkbox-label {
+/*input[type=checkbox] + label.gpii-checkbox-label {
     margin-left: 25px;
     text-indent: -1.2em;
     font-family: 'checkboxTick';
     display: inline-block;
     width: 228px;
-}
+}*/
 
-input[type=checkbox] + label.gpii-checkbox-label:before {
+/*input[type=checkbox] + label.gpii-checkbox-label:before {
     content: "\e00a";
     color: transparent;
     border: 1px solid #556273;
     border-radius: 4px;
     background-color: white;
     font-size: 75%;
-}
+}*/
 
-input[type=checkbox]:checked + label.gpii-checkbox-label {
+/*input[type=checkbox]:checked + label.gpii-checkbox-label {
     font-family: 'checkboxTick';
 }
-
-input[type=checkbox]:checked + label.gpii-checkbox-label:before {
+*/
+/*input[type=checkbox]:checked + label.gpii-checkbox-label:before {
     content: "\e00a";
     color: white;
     background-color: #556273;
-}
+}*/
 
 .gpii-checkbox-label-text {
     font-family: 'Open Sans', sans-serif;
@@ -352,6 +350,14 @@ body {
     font-family: 'Roboto Slab', serif;
 }
 
+.ui-widget-content {
+    background: none !important;
+}
+
+.ui-state-default {
+    background: none !important;
+}
+
 .ui-widget-content.ui-widget::selection {
     background: yellow; /*Safari*/
 }
@@ -366,7 +372,7 @@ body {
     font-size: 90%;
     height: 39px;
     border: 2px;
-    border-color: #D5E1E2 !important;
+    border-color: #D5E1E2;
     border-style: solid none solid solid;
     padding-left: 10px;
 }
@@ -506,4 +512,15 @@ body {
 .fl-prefsEditor label {
     text-transform: none;
     font-size: 1.2em;
+}
+
+
+.gpii-visualAlternativesPresetButton-label {
+    font-family: 'Roboto Slab',serif;
+    font-size: 1.5em !important;
+    text-transform: capitalize !important;
+}
+
+.gpii-followingElement-container {
+    margin-left: 20px;
 }
