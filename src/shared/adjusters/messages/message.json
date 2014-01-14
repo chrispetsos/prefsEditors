@@ -1,9 +1,9 @@
 {
     "tooltipUnchecked": "Add to my preferences",
     "tooltipChecked": "Remove from my preferences",
-    "visualAlternativesPresetButtonLabel": "visual alternatives",
-    "volumePresetButtonLabel": "volume",
-    "languagePresetButtonLabel": "language",
+    "visualAlternativesPresetButtonLabel": "Visual alternatives",
+    "volumePresetButtonLabel": "Volume",
+    "languagePresetButtonLabel": "Language",
     "speakTextLabel": "Speak Text",
     "screenReaderSwitchLabel": "Screen Reader",
     "wordsSpokenPerMinuteLabel": "Words spoken per minute",
