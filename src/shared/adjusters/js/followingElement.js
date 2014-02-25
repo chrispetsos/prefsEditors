@@ -28,6 +28,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             activatableLabelsSelector: ".gpiic-followingElementLabel"
         },
         activatableLabelsSelector: "{that}.options.selectors.followingElementLabel",
+        selectorsToIgnore: ["activatableLabelsSelector"],
         members: {
             messageResolver: "{prefsEditorLoader}.msgBundle"
         },
