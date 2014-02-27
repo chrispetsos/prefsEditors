@@ -224,7 +224,7 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
     gpii.prefs.gpiiStore.set = function (model, settings, session, modelTransformFunc, onSuccessfulSetFunction) {
         var transformedModel = modelTransformFunc(model);
 
-        var urlToPost = session.options.loggedUser ? (session.options.url + "user/" + session.options.loggedUser) : (session.options.url + "user/");
+        var urlToPost = session.options.loggedUser ? (session.options.url + "user/" + session.options.loggedUser) : ("http://preferences.gpii.net/" + "user/");
         $.ajax({
             url: urlToPost,
             type: "POST",
