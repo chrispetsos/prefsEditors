@@ -32,7 +32,14 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 funcName: "gpii.adjuster.singleSelectionWithKeyboard.setFocusHandlers",
                 args: [
                     "{that}.dom.singleSelectionLabels"
-                ]
+                ],
+                /*
+                 * NOTE: this was needed for the case of speakTextSelector single selection adjuster.
+                 * If "dynamic: true" was not set, this handler was invoked twice. The second time the 
+                 * labels were incorrectly set to non-existent elements and the focus effect could not
+                 * be achieved.
+                 */ 
+                dynamic: true
             }
         }
     });

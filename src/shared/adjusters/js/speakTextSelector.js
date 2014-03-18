@@ -19,12 +19,8 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         gradeNames: ["fluid.prefs.panel", "gpii.adjuster.singleSelectionWithKeyboard", "autoInit"],
         preferenceMap: {
             "gpii.primarySchema.screenReader": {
-                "model.screenReader": "default",
-                "controlValues.speakTextSelector": ["off", "screenReader", "textToSpeech"]
+                "model.screenReader": "default"
             }
-        },
-        listeners: {
-            onDomBind: "{that}.speakTextSelectorStyle"
         },
         selectors: {
             headingLabel: ".gpiic-speakTextSelector-label",
@@ -62,21 +58,10 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         repeatingSelectors: ["speakTextSelectorRow"],
         controlValues: {
             speakTextSelector: ["off", "screenReader", "textToSpeech"]
-        },
-        markup: {
-            speakTextSelector: "<div class=\"gpii-speakTextSelector-selectionLabel\"></div>" +
-                    "<div class=\"gpii-speakTextSelector-selectionDescription\"></div>"
-        },
-        invokers: {
-            "speakTextSelectorStyle": {
-                funcName: "gpii.adjuster.speakTextSelector.style",
-                args: ["{that}.dom.speakTextSelectorLabel", "{that}.options.strings.speakTextSelectorLabel",
-                    "{that}.options.markup.speakTextSelector", "{that}.options.controlValues.speakTextSelector"]
-            }
         }
     });
     
-    gpii.adjuster.speakTextSelector.style = function (labels, labelStrings, markup, speakTextSelectorSelection) {
+    /*gpii.adjuster.speakTextSelector.style = function (labels, labelStrings, markup, speakTextSelectorSelection) {
         fluid.each(labels, function (label, index) {
             label = $(label);
             label.html(fluid.stringTemplate(markup, {
@@ -84,7 +69,9 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             }));
             label.attr("tooltip", labelStrings[index]);
         });
+        
+        // TODO: set this aria label 
         //container.attr("aria-labelledby", gpii.ariaUtility.getLabelId(heading));
-    };
+    };*/
     
 })(jQuery, fluid);
