@@ -63,6 +63,11 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             "default": "black-white",
             "enum": ["black-white", "white-black", "black-yellow", "yellow-black"]
         },
+        "gpii.primarySchema.speakTextSelector": {
+            "type": "string",
+            "default": "",
+            "enum": ["off", "screenReader", "textToSpeech"]
+        },
         "gpii.primarySchema.screenReader": {
             "type": "boolean",
             "default": false

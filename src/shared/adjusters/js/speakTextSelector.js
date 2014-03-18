@@ -18,8 +18,9 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
     fluid.defaults("gpii.adjuster.speakTextSelector", {
         gradeNames: ["fluid.prefs.panel", "gpii.adjuster.singleSelectionWithKeyboard", "autoInit"],
         preferenceMap: {
-            "gpii.primarySchema.screenReader": {
-                "model.screenReader": "default"
+            "gpii.primarySchema.speakTextSelector": {
+                "model.speakTextSelector": "default",
+                "controlValues.speakTextSelector": "enum"
             }
         },
         selectors: {
@@ -40,7 +41,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                     tree: {
                         optionnames: "${{that}.options.strings.speakTextSelectorLabel}",
                         optionlist: "${{that}.options.controlValues.speakTextSelector}",
-                        selection: ""
+                        selection: "$(speakTextSelector)"
                     }
                 }
             ],
@@ -56,8 +57,13 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             speakTextSelectorLabel: "{that}.stringBundle.speakTextSelectorLabel"
         },
         repeatingSelectors: ["speakTextSelectorRow"],
-        controlValues: {
-            speakTextSelector: ["off", "screenReader", "textToSpeech"]
+        modelListeners: {
+            "speakTextSelector": {
+                "this": "console",
+                "method": "log",
+                "args": ["{change}.value"],
+                dynamic: true
+            }
         }
     });
     

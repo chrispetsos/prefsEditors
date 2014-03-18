@@ -221,7 +221,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         },
 
         "speakTextSelector": {
-            "type": "fluid.littleComponent",            
+            "type": "gpii.primarySchema.speakTextSelector",            
             "panel": {
                 "type": "gpii.adjuster.speakTextSelector",
                 "template": "%prefix/speakTextSelectorTemplate.html",
