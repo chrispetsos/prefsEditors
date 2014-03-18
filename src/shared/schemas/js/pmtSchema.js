@@ -54,8 +54,8 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 "template": "../../src/pmt/pmt-VisualAlternativesGroupContainer.html",
                 "message": "%prefix/message.json",
                 "panels": {
-                    "always": ["speakText", "screenReaderBrailleOutput"],
-                    "gpii.primarySchema.speakText": [
+                    "always": ["speakTextSelector", "screenReaderBrailleOutput"],
+                    "gpii.primarySchema.screenReader": [
                         "wordsSpokenPerMinute", "volume", "visualAlternativesMoreLess"
                     ],
                     "gpii.primarySchema.visualAlternativesMoreLess": [
@@ -220,16 +220,16 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             }
         },
 
-        "speakText": {
-            "type": "gpii.primarySchema.speakText",
+        "speakTextSelector": {
+            "type": "fluid.liitleComponent",            
             "panel": {
-                "type": "gpii.adjuster.speakText",
-                "template": "%prefix/onOffSwitchTemplate.html",
+                "type": "gpii.adjuster.speakTextSelector",
+                "template": "%prefix/speakTextSelectorTemplate.html",
                 "container": ".speakText",
                 "message": "%prefix/message.json"
             }
         },
-
+        
         "wordsSpokenPerMinute": {
             "type": "gpii.primarySchema.wordsSpokenPerMinute",
             "panel": {
