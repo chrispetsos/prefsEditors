@@ -43,7 +43,10 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             value: "gpii_primarySchema_screenReaderLanguage"
         }],
         "http://registry\\.gpii\\.org/common/screenReaderTTSEnabled": [{
-            value: "gpii_primarySchema_speakText"
+            value: "gpii_primarySchema_screenReader"
+        }],
+        "http://registry\\.gpii\\.org/common/selfVoicingEnabled": [{
+            value: "gpii_primarySchema_textToSpeech"
         }],
         "http://registry\\.gpii\\.org/common/speakTutorialMessages": [{
             value: "gpii_primarySchema_speakTutorialMessages"
