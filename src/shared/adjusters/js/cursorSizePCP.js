@@ -51,6 +51,17 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                             "this": "{that}.slider.dom.thumb",
                             method: "attr",
                             args: ["aria-labelledby", {expander: {funcName: "gpii.ariaUtility.getLabelId", args: "{cursorSizePCP}.dom.cursorSizeLabel"}}]
+                        },
+                        "afterRender.stopThumbKeyEventPropagation": {
+                            "this": "{that}.slider.dom.thumb",
+                            method: "keydown",
+                            args: ["{that}.stopThumbKeyEventPropagation"]
+                        }
+                    },
+                    invokers: {
+                        "stopThumbKeyEventPropagation": {
+                            funcName: "gpii.adjuster.cursorSizePCP.stopThumbKeyEventPropagation",
+                            args: "{arguments}.0"
                         }
                     }
                 }
@@ -65,4 +76,10 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             range: "min"
         }
     });
+    
+    gpii.adjuster.cursorSizePCP.stopThumbKeyEventPropagation = function (event) {
+        console.log(event);
+        event.preventDefault();
+        event.stopPropagation();
+    }
 })(jQuery, fluid);
