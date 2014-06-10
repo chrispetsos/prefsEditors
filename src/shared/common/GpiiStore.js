@@ -144,8 +144,13 @@ https://github.com/fluid-project/infusion/raw/master/Infusion-LICENSE.txt
             // already logged in, refresh AT applications
             // log user out
             session.logout();
-            // and log user in again
-            session.login(data.token);
+            
+            // wait two seconds
+            setTimeout(function() {
+                // and log user in again
+                session.login(data.token);
+            }, 2000);
+            
             /* TODO: The above procedure should normally be happening on the GPII side.
              * Preference management tools should not have session management responsibilities.
              * This is a work-around for the pilot2 tests.
