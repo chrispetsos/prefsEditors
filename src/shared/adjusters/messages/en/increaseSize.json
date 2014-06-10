@@ -4,5 +4,10 @@
     "appearance": "appearance",
     "magnifier": "magnifier",
     "additionalMagnifierAdjusters": "additional magnifier adjusters",
+    "additionalVisualAdjusters": "additional visual adjusters",
+    "moreSpeakTextAdjusters": "more speak text adjusters",
+    "lessSpeakTextAdjusters": "less speak text adjusters",
+    "moreMagnifierAdjusters": "more magnifier adjusters",
+    "lessMagnifierAdjusters": "less magnifier adjusters",
     "additionalVisualAdjusters": "additional visual adjusters"
 }

@@ -25,9 +25,10 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             visualAlternativesHiddenPanel: ".gpiic-visualAlternatives-hiddenPanel",
             voicePitchInput: ".gpiic-voicePitch .gpiic-textfieldStepper-valueField",
             visualAlternativesMoreLess: ".gpiic-visualAlternativesMoreLess-label",
+            moreLessLabel: ".gpiic-visualAlternativesMoreLess-labelText",
             speakTextContainer: ".gpiic-speakText-container"
         },
-        selectorsToIgnore: ["visualAlternativesHiddenPanel", "voicePitchInput", "visualAlternativesMoreLess", "speakTextContainer"],
+        selectorsToIgnore: ["visualAlternativesHiddenPanel", "voicePitchInput", "visualAlternativesMoreLess", "moreLessLabel", "speakTextContainer"],
         protoTree: {
             visualAlternativesHeader: {messagekey: "visualAlternativesPresetButtonLabel"}
         },
@@ -52,6 +53,10 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 "listener": "{that}.applier.modelChanged.addListener",
                 "args": ["gpii_primarySchema_visualAlternativesMoreLess", "{that}.setExpandedAriaExpanded"]
             },
+            "afterRender.addListenerForMoreLessAriaLabel": {
+                "listener": "{that}.applier.modelChanged.addListener",
+                "args": ["gpii_primarySchema_visualAlternativesMoreLess", "{that}.setMoreLessAriaLabel"]
+            },
             "afterRender.bindVisualAlternativesMoreLessChange": {
                 listener: "{that}.applier.modelChanged.addListener",
                 args: ["gpii_primarySchema_visualAlternativesMoreLess", "{that}.setFocusOnVisualAlternativesMoreLess"]
@@ -73,6 +78,11 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 "this": "{that}.dom.visualAlternativesHiddenPanel",
                 "method": "attr",
                 "args": ["aria-expanded", "{that}.model.gpii_primarySchema_visualAlternativesMoreLess"]
+            },
+            setMoreLessAriaLabel: {
+                funcName: "gpii.panel.expandingAdjusters.setMoreLessAriaLabel",
+                args: ["{that}.dom.visualAlternativesMoreLess", "{that}.model.gpii_primarySchema_visualAlternativesMoreLess", "{that}.msgLookup.moreSpeakTextAdjusters", "{that}.msgLookup.lessSpeakTextAdjusters"],
+                dynamic: true
             },
             setFocusOnVisualAlternativesMoreLess: {
                 funcName: "gpii.panel.visualAlternatives.setFocusOnVisualAlternativesMoreLess",

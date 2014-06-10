@@ -113,21 +113,10 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             }
         },
         selectors: {
-            visualAlternativesMoreLessLabel: ".gpiic-visualAlternativesMoreLess-label"
+            visualAlternativesMoreLessLabel: ".gpiic-visualAlternativesMoreLess-label",
+            visualAlternativesMoreLessLabelText: ".gpiic-visualAlternativesMoreLess-labelText"
         },
-        selectorsToIgnore: ["visualAlternativesMoreLessIcon"],
-        protoTree: {
-            expander: {
-                type: "fluid.renderer.condition",
-                condition: "${{that}.model.visualAlternativesMoreLess}",
-                trueTree: {
-                    visualAlternativesMoreLessLabel: {messagekey: "less"}
-                },
-                falseTree: {
-                    visualAlternativesMoreLessLabel: {messagekey: "more"}
-                }
-            }
-        },
+        selectorsToIgnore: ["visualAlternativesMoreLessLabel", "visualAlternativesMoreLessLabelText", "visualAlternativesMoreLessIcon"],
         listeners: {
             "onDomBind.bindEventToggleMoreLessSwitch": {
                 "this": "{that}.dom.visualAlternativesMoreLessLabel",
@@ -143,7 +132,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             toggleVisualAlternativesMoreLess: {
                 "funcName": "gpii.visualAlternativesMoreLessConfiguration",
                 "args": ["{that}.model.visualAlternativesMoreLess",
-                         "{that}.dom.visualAlternativesMoreLessLabel",
+                         "{that}.dom.visualAlternativesMoreLessLabelText",
                          "{that}.msgLookup.more",
                          "{that}.msgLookup.less"
                     ],
@@ -159,7 +148,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
 
     gpii.visualAlternativesMoreLessConfiguration = function (modelValue, label, more, less) {
         var newText = modelValue ? less : more;
-        label.attr("value", newText);
+        label.text(newText);
     };
 
     gpii.visualAlternativesMoreLessRequestChange = function (that) {

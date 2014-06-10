@@ -47,14 +47,14 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 "method": "slideUp"
             },
             "onShowExpandingAdjusters.setLessText": {
-                "this": "{that}.dom.moreLess",
-                "method": "attr",
-                "args": ["value", "{that}.msgLookup.less"]
+                "this": "{that}.dom.moreLessLabel",
+                "method": "text",
+                "args": ["{that}.msgLookup.less"]
             },
             "onHideExpandingAdjusters.setMoreText": {
-                "this": "{that}.dom.moreLess",
-                "method": "attr",
-                "args": ["value", "{that}.msgLookup.more"]
+                "this": "{that}.dom.moreLessLabel",
+                "method": "text",
+                "args": ["{that}.msgLookup.more"]
             },
             "onShowExpandingAdjusters.focusElementToFocusOnExpansion": {
                 "this": "fluid",
@@ -77,6 +77,9 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
             },
             "afterRender.restoreExpandingAdjusters": {
                 listener: "{that}.toggleExpandingAdjustersInstant"
+            },
+            "afterRender.setMoreLessAriaLabel": {
+                "listener": "{that}.setMoreLessAriaLabel"
             }
         },
         invokers: {
@@ -127,10 +130,11 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         },
         selectors: {
             moreLess: "",  //should be provided by integrators
+            moreLessLabel: "",  //should be provided by integrators
             expandingAdjusters: "",  //should be provided by integrators
             elementToFocusOnExpansion: ""   //should be provided by integrators
         },
-        selectorsToIgnore: ["expandingAdjusters", "moreLess", "elementToFocusOnExpansion"]
+        selectorsToIgnore: ["expandingAdjusters", "moreLess", "moreLessLabel", "elementToFocusOnExpansion"]
     });
 
     gpii.panel.expandingAdjusters.showOrHideDependingOnState = function (state, showEvent, hideEvent, duration) {
@@ -144,4 +148,12 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         that.refreshView();
     };
     
+    gpii.panel.expandingAdjusters.setMoreLessAriaLabel = function (moreLessElement, moreLessExpanded, moreAriaLabel, lessAriaLabel) {
+        if (moreLessExpanded) {
+            gpii.ariaUtility.setAriaLabel(moreLessElement, lessAriaLabel);
+        } else {
+            gpii.ariaUtility.setAriaLabel(moreLessElement, moreAriaLabel);
+        }
+    };
+
 })(jQuery, fluid);

@@ -4,5 +4,9 @@
     "appearance": "apariencia",
     "magnifier": "magnificador",
     "additionalMagnifierAdjusters": "más ajustadores de lupa",
+    "moreSpeakTextAdjusters": "more speak text adjusters",
+    "lessSpeakTextAdjusters": "less speak text adjusters",
+    "moreMagnifierAdjusters": "more magnifier adjusters",
+    "lessMagnifierAdjusters": "less magnifier adjusters",
     "additionalVisualAdjusters": "más ajustadores de lectores de pantalla"
 }

@@ -38,4 +38,8 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         container.attr("aria-checked", checked);
     };
 
+    gpii.ariaUtility.setAriaLabel = function (container, label) {
+        container.attr("aria-label", label);
+    };
+
 })(jQuery, fluid);
