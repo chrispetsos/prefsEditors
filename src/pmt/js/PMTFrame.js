@@ -183,7 +183,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
                 },
                 showSaveNotification: {
                     "funcName": "gpii.pmt.showSaveNotification",
-                    "args": ["{that}", "{arguments}.0"],
+                    "args": ["{that}", "{arguments}.0", "{that}.msgLookup.notificationConfirmButton"],
                     dynamic: true
                 },
                 hideSaveNotification: {
@@ -253,15 +253,23 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         }
     };
 
-    gpii.pmt.showSaveNotification = function (that, userToken) {
+    gpii.pmt.showSaveNotification = function (that, userToken, gotItText) {
         // re-wrap jQuery 1.7 element as jQuery 1.9 version in order to support the "appendTo" param.
         var notificationjq1_7 = that.dom.locate("notification");
         var unwrappedNotification = fluid.unwrap(notificationjq1_7);
         var notificationjq1_9 = $(unwrappedNotification);
+        
+        var dialog_buttons = {}; 
+        dialog_buttons[gotItText] = function () {
+            that.events.onLogin.fire();
+            gpii.pmt.hideSaveNotification(that);
+        };
+        
         // create and show it immediately
         notificationjq1_9.dialog({
             autoOpen: true,
             modal: true,
+            buttons: dialog_buttons,
             appendTo: ".gpiic-pmt-bottomRow",
             dialogClass: "gpii-dialog-noTitle",
             closeOnEscape: false,
@@ -277,7 +285,7 @@ https://github.com/GPII/prefsEditors/LICENSE.txt
         var unwrappedNotification = fluid.unwrap(notificationjq1_7);
         var notificationjq1_9 = $(unwrappedNotification);
         // destroy it on hide
-        notificationjq1_9.dialog("destroy");
+        notificationjq1_9.dialog("close");
     };
 
     fluid.defaults("gpii.pmt.previewPerSettingEnhanced", {
